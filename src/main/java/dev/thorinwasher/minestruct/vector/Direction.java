@@ -1,6 +1,6 @@
 package dev.thorinwasher.minestruct.vector;
 
-import net.minestom.server.coordinate.Vec;
+import java.util.Locale;
 
 public enum Direction {
 
@@ -24,11 +24,28 @@ public enum Direction {
         this.opposite = opposite;
     }
 
-    public Vec vec() {
-        return new Vec(x, y, z);
+    public Vector3i direction() {
+        return new Vector3i(x, y, z);
     }
 
-    public Direction opposite(){
+    public Direction opposite() {
         return Direction.valueOf(opposite);
+    }
+
+    public String toFacing() {
+        return name().toLowerCase(Locale.ROOT);
+    }
+
+    public static Direction fromFacing(String facing) {
+        return Direction.valueOf(facing.toUpperCase(Locale.ROOT));
+    }
+
+    public static Direction fromVector(Vector3i vector3i) {
+        for (Direction direction : Direction.values()) {
+            if(direction.direction().equals(vector3i)){
+                return direction;
+            }
+        }
+        throw new IllegalArgumentException("Expected axial vector of length 1");
     }
 }

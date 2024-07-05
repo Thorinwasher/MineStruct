@@ -5,5 +5,5 @@ import net.minestom.server.world.biome.Biome;
 
 public interface GroundMaterialConfig {
 
-    public Block getGroundMaterial(Biome biome);
+    Block getGroundMaterial(Biome biome);
 }
