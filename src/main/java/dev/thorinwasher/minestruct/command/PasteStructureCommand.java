@@ -22,7 +22,5 @@ public class PasteStructureCommand extends Command {
             session.translate(player.getPosition());
             session.paste(player.getInstance());
         }));
-
-
     }
 }

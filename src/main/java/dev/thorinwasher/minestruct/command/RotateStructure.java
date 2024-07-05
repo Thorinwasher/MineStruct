@@ -32,6 +32,6 @@ public class RotateStructure extends Command {
             Axis axis = context.get(axisArgument);
             RotationType rotationType = context.get(rotationArgument);
             session.rotate(rotationType, axis);
-        });
+        }, axisArgument, rotationArgument);
     }
 }

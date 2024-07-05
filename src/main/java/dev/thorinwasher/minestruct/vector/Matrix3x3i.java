@@ -91,4 +91,11 @@ public class Matrix3x3i {
     public String toString() {
         return "Matrix3x3i" + Arrays.deepToString(matrix);
     }
+
+    public int determinant() {
+        int x = (matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]));
+        int y = (matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0]));
+        int z = (matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]));
+        return x - y + z;
+    }
 }

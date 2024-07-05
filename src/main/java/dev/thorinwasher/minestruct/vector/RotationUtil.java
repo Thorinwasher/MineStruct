@@ -40,6 +40,6 @@ public class RotationUtil {
     }
 
     private static int sin(double radians) {
-        return (int) Math.round(Math.cos(radians));
+        return (int) Math.round(Math.sin(radians));
     }
 }

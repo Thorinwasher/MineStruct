@@ -15,7 +15,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("dev.thorinwasher:json-junit-params:1.0-SNAPSHOT")
-    implementation("net.minestom:minestom-snapshots:f1d5940855")
+    implementation("net.minestom:minestom-snapshots:0129aedae3")
     implementation("dev.hollowcube:schem:1.1.0")
 }
 
