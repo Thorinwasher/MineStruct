@@ -52,7 +52,9 @@ public class Matrix3x3i {
             for (int col = 0; col < lineSplit.length; col++) {
                 output[col][row] = Integer.parseInt(lineSplit[col]);
             }
+            row++;
         }
+        System.out.println(Arrays.deepToString(output));
         return new Matrix3x3i(output);
     }
 
