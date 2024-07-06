@@ -4,6 +4,7 @@ import net.minestom.server.coordinate.Point;
 import net.minestom.server.instance.block.Block;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -74,5 +75,10 @@ public class MatrixOperation implements VectorOperation {
 
     private boolean flipsDirection(Direction direction) {
         return matrix.multiply(direction.direction()).equals(direction.direction());
+    }
+
+    @Override
+    public String toString(){
+        return matrix.toString();
     }
 }

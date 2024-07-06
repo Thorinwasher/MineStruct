@@ -1,6 +1,7 @@
 package dev.thorinwasher.minestruct.vector;
 
 import net.minestom.server.coordinate.Point;
+import net.minestom.server.coordinate.Vec;
 import net.minestom.server.instance.block.Block;
 
 import java.util.ArrayList;
@@ -11,7 +12,9 @@ public class VectorOperationSequence implements VectorOperation {
     private final List<VectorOperation> operations = new ArrayList<>();
 
     public VectorOperationSequence(List<VectorOperation> vectorOperations) {
-        vectorOperations.forEach(this::add);
+        for(VectorOperation vectorOperation : vectorOperations){
+            this.add(vectorOperation);
+        }
     }
 
     public VectorOperationSequence() {
@@ -51,5 +54,10 @@ public class VectorOperationSequence implements VectorOperation {
 
     public VectorOperationSequence copy() {
         return new VectorOperationSequence(new ArrayList<>(operations));
+    }
+
+    @Override
+    public String toString(){
+        return "Sequence" + operations;
     }
 }

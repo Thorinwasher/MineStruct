@@ -25,7 +25,7 @@ public class SimpleStruct implements Struct {
     public void paste(Instance instance, VectorOperation vectorOperation) {
         schematic.apply(Rotation.NONE, (point, block) -> {
             Point destinationPoint = vectorOperation.operate(point);
-            instance.setBlock(destinationPoint, block);
+            instance.setBlock(destinationPoint, vectorOperation.operate(block));
         });
     }
 }

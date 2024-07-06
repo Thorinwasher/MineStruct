@@ -15,28 +15,31 @@ public class StructSession {
 
     private StructSession(Struct struct, VectorOperationSequence vectorOperationSequence) {
         this.struct = struct;
-        this.operations = new VectorOperationSequence();
+        this.operations = vectorOperationSequence;
     }
 
     public void rotate(RotationType rotation, Axis axis) {
+        System.out.println(operations);
         operations.add(new MatrixOperation(RotationUtil.getRotationMatrix(axis, rotation)));
     }
 
     public void flip(Axis flipAxis) {
+        System.out.println(operations);
         operations.add(new MatrixOperation(FlipUtil.getFlipMatrix(flipAxis)));
     }
 
     public void translate(Point translation) {
+        System.out.println(operations);
         operations.add(new Translation(translation));
     }
 
     public void paste(Instance instance) {
+        System.out.println(operations);
         struct.paste(instance, operations);
     }
 
     public StructSession copy() {
-        StructSession structSession = new StructSession(struct);
-        VectorOperationSequence vectorOperationSequence = structSession.operations.copy();
+        VectorOperationSequence vectorOperationSequence = this.operations.copy();
         return new StructSession(struct, vectorOperationSequence);
     }
 }

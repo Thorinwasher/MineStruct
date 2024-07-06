@@ -8,8 +8,8 @@ public enum Direction {
     DOWN(0, -1, 0, "UP"),
     EAST(1, 0, 0, "WEST"),
     WEST(-1, 0, 0, "EAST"),
-    NORTH(0, 0, 1, "SOUTH"),
-    SOUTH(0, 0, -1, "NORTH");
+    NORTH(0, 0, -1, "SOUTH"),
+    SOUTH(0, 0, 1, "NORTH");
 
 
     private final int x;
