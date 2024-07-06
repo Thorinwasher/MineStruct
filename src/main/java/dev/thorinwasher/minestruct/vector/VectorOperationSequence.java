@@ -48,4 +48,8 @@ public class VectorOperationSequence implements VectorOperation {
         }
         operations.set(operations.size() - 1, new MatrixOperation(matrixOperation1.getMatrix().multiply(matrixOperation2.getMatrix())));
     }
+
+    public VectorOperationSequence copy() {
+        return new VectorOperationSequence(new ArrayList<>(operations));
+    }
 }

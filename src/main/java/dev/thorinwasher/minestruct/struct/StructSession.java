@@ -10,6 +10,10 @@ public class StructSession {
     private final VectorOperationSequence operations;
 
     public StructSession(Struct struct) {
+        this(struct, new VectorOperationSequence());
+    }
+
+    private StructSession(Struct struct, VectorOperationSequence vectorOperationSequence) {
         this.struct = struct;
         this.operations = new VectorOperationSequence();
     }
@@ -28,5 +32,11 @@ public class StructSession {
 
     public void paste(Instance instance) {
         struct.paste(instance, operations);
+    }
+
+    public StructSession copy() {
+        StructSession structSession = new StructSession(struct);
+        VectorOperationSequence vectorOperationSequence = structSession.operations.copy();
+        return new StructSession(struct, vectorOperationSequence);
     }
 }

@@ -15,7 +15,7 @@ public class PasteStructureCommand extends Command {
             if (!(sender instanceof Player player)) {
                 throw new IllegalArgumentException("Only player can execute this command!");
             }
-            StructSession session = Registry.STRUCTURE_SESSION_REGISTRY.get(player.getUuid().toString());
+            StructSession session = Registry.STRUCTURE_SESSION_REGISTRY.get(player.getUuid().toString()).copy();
             if(session == null){
                 throw new IllegalArgumentException("You're not in an active session!");
             }
